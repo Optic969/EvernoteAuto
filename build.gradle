@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+
+    // Selenide (UI-tests)
+    implementation 'com.codeborne:selenide:7.9.4'
+
+    // AssertJ (asserts)
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+
+    // Allure (отчёты)
+    testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
+    implementation 'io.qameta.allure:allure-junit5:2.24.0'
+
+    // WebDriverManager
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+
+    // Jackson (JSON testdata)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // Apache Commons (RandomStringUtils, etc.)
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+    // Slf4j + Logback (logging)
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.4.12'
+}
+
+test {
+    useJUnitPlatform()
+    systemProperty 'selenide.browser', 'chrome'  // или 'firefox'
+}
+task printTestCompileClasspath {
+    doLast {
+        println sourceSets.test.compileClasspath.asPath
+    }
+}
