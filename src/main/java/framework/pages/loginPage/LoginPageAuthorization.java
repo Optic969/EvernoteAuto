@@ -10,7 +10,7 @@ import static framework.pages.loginPage.LoginPageLocators.*;
 public class LoginPageAuthorization {
 
     @Step("Unsuccessful login using invalid email/password")
-    public void logInApp() {
+    public void loginWithInvalidCredentials() {
         $x(EMAIL_FIELD).sendKeys(ConfigReader.INVALID_EMAIL);
         $x(CONTINUE_BUTTON).click();
         $x(PASSWORD_BUTTON).shouldBe(visible).sendKeys(ConfigReader.INVALID_PASSWORD);
@@ -20,4 +20,3 @@ public class LoginPageAuthorization {
 
     }
 }
-

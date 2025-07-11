@@ -8,15 +8,15 @@ import org.junit.jupiter.api.*;
 
 public class EvernoteTests extends BaseTest {
 
-    HomePageLogIn homePage  = new HomePageLogIn ();
+    HomePageLogIn homePage = new HomePageLogIn();
     LoginPageAuthorization loginPage = new LoginPageAuthorization();
 
     @Test
     @Order(1)
     @DisplayName("Go to login screen")
     public void testGoToLogInScreen() {
-       homePage.loginApp();
-       loginPage.logInApp();
+        homePage.goToLogInScreen();
+        loginPage.loginWithInvalidCredentials();
 
     }
 }

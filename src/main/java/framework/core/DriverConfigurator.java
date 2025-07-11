@@ -3,6 +3,7 @@ package framework.core;
 import com.codeborne.selenide.Configuration;
 
 public class DriverConfigurator {
+
     public static void configure() {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://evernote.com");

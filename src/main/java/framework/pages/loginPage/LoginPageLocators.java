@@ -7,4 +7,3 @@ public class LoginPageLocators {
     public static final String PASSWORD_BUTTON = "//input[@placeholder='Password']";
     public static final String INCORRECT_LOGIN_HINT = "//span[text()=\"Please verify your credentials. The password entered is incorrect.\"]";
 }
-
