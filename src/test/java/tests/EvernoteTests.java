@@ -5,7 +5,8 @@ import framework.pages.homePage.*;
 import framework.pages.loginPage.LoginPageAuthorization;
 import org.junit.jupiter.api.*;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class EvernoteTests extends BaseTest {
 
     HomePageLogIn homePage = new HomePageLogIn();
@@ -13,10 +14,18 @@ public class EvernoteTests extends BaseTest {
 
     @Test
     @Order(1)
-    @DisplayName("Go to login screen")
-    public void testGoToLogInScreen() {
+    @DisplayName("Unsuccessful login using invalid email/password")
+    public void testUnsuccessfulLogIn() {
         homePage.goToLogInScreen();
         loginPage.loginWithInvalidCredentials();
 
     }
+
+    @Test
+    @Order(2)
+    @DisplayName("Unsuccessful login using invalid email/password")
+    public void testSuccessfulLogin() {
+        loginPage.loginWithValidCredentials();
+    }
+
 }

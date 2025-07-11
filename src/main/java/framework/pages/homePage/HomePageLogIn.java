@@ -16,6 +16,5 @@ public class HomePageLogIn {
         $x(ACCEPT_COOKIES).click();
         $x(LOG_IN).shouldBe(visible).click();
         webdriver().shouldHave(url(ConfigReader.LOG_IN_URL));
-
     }
 }

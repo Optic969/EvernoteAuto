@@ -10,5 +10,6 @@ public class DriverConfigurator {
         Configuration.browserSize = "1920x1080";
         Configuration.headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
         Configuration.timeout = 6000;
+        Configuration.reopenBrowserOnFail = false;
     }
 }
