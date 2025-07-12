@@ -1,10 +1,10 @@
 package tests;
 
 import framework.core.BaseTest;
-import framework.pages.homePage.*;
-import framework.pages.loginPage.LoginPageAuthorization;
-import framework.pages.workPage.WorkPageLogOut;
-import framework.pages.workPage.WorkPageNote;
+import pages.homePage.HomePageLogIn;
+import pages.loginPage.LoginPageAuthorization;
+import pages.workPage.WorkPageLogOut;
+import pages.workPage.WorkPageNote;
 import org.junit.jupiter.api.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

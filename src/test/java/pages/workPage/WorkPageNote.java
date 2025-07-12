@@ -1,10 +1,10 @@
-package framework.pages.workPage;
+package pages.workPage;
 
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
-import static framework.pages.workPage.WorkPageLocators.*;
+import static pages.workPage.WorkPageLocators.*;
 
 public class WorkPageNote {
 

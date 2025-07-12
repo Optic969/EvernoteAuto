@@ -1,4 +1,4 @@
-package framework.pages.loginPage;
+package pages.loginPage;
 
 public class LoginPageLocators {
 

@@ -1,4 +1,4 @@
-package framework.pages.homePage;
+package pages.homePage;
 
 public class HomePageLocators {
     public static final String LOG_IN = "//span[text()=\"Log in\"]";

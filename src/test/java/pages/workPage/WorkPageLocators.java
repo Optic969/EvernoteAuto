@@ -1,4 +1,4 @@
-package framework.pages.workPage;
+package pages.workPage;
 
 public class WorkPageLocators {
 
