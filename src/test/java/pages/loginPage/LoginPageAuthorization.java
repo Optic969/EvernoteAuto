@@ -38,29 +38,3 @@ public class LoginPageAuthorization {
         webdriver().shouldHave(url(ConfigReader.get("client_web_url")), Duration.ofSeconds(10));
     }
 }
-
-
-/*public class LoginPageAuthorization {
-
-    @Step("Unsuccessful login using invalid email/password")
-    public void loginWithInvalidCredentials() {
-        $x(EMAIL_FIELD).sendKeys(ConfigReader.get("invalid_email"));
-        $x(CONTINUE_BUTTON).click();
-        $x(PASSWORD_FIELD).shouldBe(visible).sendKeys(ConfigReader.get("invalid_password"));
-        $x(CONTINUE_BUTTON).click();
-        $x(INCORRECT_LOGIN_HINT).shouldBe(visible);
-    }
-
-    @Step("Successful login using valid email/password")
-    public void loginWithValidCredentials() {
-        open(ConfigReader.get("log_in_url"));
-        $x(EMAIL_FIELD).shouldBe(visible);
-        $x(EMAIL_FIELD).click();
-        $x(EMAIL_FIELD).setValue(ConfigReader.get("valid_email"));
-        $x(CONTINUE_BUTTON).shouldBe(enabled).click();
-        $x(PASSWORD_FIELD).click();
-        $x(PASSWORD_FIELD).setValue(ConfigReader.get("valid_password"));
-        $x(CONTINUE_BUTTON).shouldBe(enabled).click();
-        webdriver().shouldHave(url(ConfigReader.get("client_web_url")), Duration.ofSeconds(10));
-    }
-}*/
