@@ -3,8 +3,7 @@ package tests;
 import framework.core.BaseTest;
 import pages.homePage.HomePageLogIn;
 import pages.loginPage.LoginPageAuthorization;
-import pages.workPage.WorkPageLogOut;
-import pages.workPage.WorkPageNote;
+import pages.workPage.WorkPage;
 import org.junit.jupiter.api.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -13,8 +12,8 @@ public class EvernoteTests extends BaseTest {
 
     HomePageLogIn homePage = new HomePageLogIn();
     LoginPageAuthorization loginPage = new LoginPageAuthorization();
-    WorkPageLogOut workPageLogOut = new WorkPageLogOut();
-    WorkPageNote workPageNote = new WorkPageNote();
+    WorkPage workPage = new WorkPage();
+    //WorkPageNote workPageNote = new WorkPageNote();
 
     @Test
     @Order(1)
@@ -36,8 +35,8 @@ public class EvernoteTests extends BaseTest {
     @Order(3)
     @DisplayName("Create a note → logout")
     public void testCreateNoteAndLogout() {
-        workPageNote.createNewNote();
-        workPageLogOut.logOut();
+        workPage.createNewNote();
+        workPage.logOut();
     }
 
     @Test
@@ -45,7 +44,7 @@ public class EvernoteTests extends BaseTest {
     @DisplayName("Login again → open the created note")
     public void testLoginAgainOpenCreatedNote() {
         loginPage.loginWithValidCredentials();
-        workPageNote.goToMenuSectionNotes();
-        workPageNote.selectNote();
+        workPage.goToMenuSectionNotes();
+        workPage.selectNote();
     }
 }
