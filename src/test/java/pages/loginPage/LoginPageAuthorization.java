@@ -3,6 +3,7 @@ package pages.loginPage;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import framework.core.ConfigReader;
+
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
@@ -15,7 +16,6 @@ public class LoginPageAuthorization {
     private final SelenideElement continueButton = $x("//span[normalize-space()='Continue']");
     private final SelenideElement passwordField = $x("//input[@placeholder='Password']");
     private final SelenideElement incorrectLoginHint = $x("//span[text()='Please verify your credentials. The password entered is incorrect.']");
-    private final SelenideElement signUpLink = $x("//span[normalize-space()='Sign up']");
 
     @Step("Unsuccessful login using invalid credentials")
     public void loginWithInvalidCredentials() {
